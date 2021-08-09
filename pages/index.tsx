@@ -4,8 +4,10 @@ import UseContextApp from "../components/4.UseContext";
 import AppUseEffect from "../components/2.UseEffect";
 import AppUseMemo from "../components/5.UseMemo";
 import AppUseRef from "../components/6.UseRef";
+import CustomHooks from "../components/7.CustomHooks";
 
 export default function Home() {
+  return <CustomHooks/>
   return <AppUseMemo/>
   return <AppUseRef/>
   return <UseContextApp/>
