@@ -7,11 +7,11 @@ import AppUseRef from "../components/6.UseRef";
 import CustomHooks from "../components/7.CustomHooks";
 
 export default function Home() {
-  // return <AppuseState/>
+  return <AppuseState/>
   // return <AppUseEffect/>
   // return <AppuseReducer />;
   // return <UseContextApp/>
-  return <AppUseMemo/>
+  // return <AppUseMemo/>
   // return <AppUseRef/>
   // return <CustomHooks/>
 }

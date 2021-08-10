@@ -13,7 +13,7 @@ export default function AppUseMemo() {
 
   return (
     <div>
-      <h1> UseRef </h1>
+      <h1> UseMemo </h1>
       <p>{expensiveCalc}</p>
       <p>{toggle ? "ON" : "OFF"}</p>
       <button onClick={() => setCount(count + 1)}>Incrementar</button>
