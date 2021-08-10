@@ -11,7 +11,8 @@ const user = {
 const UserContext = createContext(user);
 
 export default function UseContextApp() {
-  // 1. Debemos agregar un componente proveedor para que los componentes hijo puedan usar el context en cuestion
+  // 1. Debemos agregar un componente proveedor para que los componentes hijo 
+  // puedan usar el context en cuestion
   return (
     <UserContext.Provider value={user}>
       <Bio />

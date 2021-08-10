@@ -4,7 +4,7 @@ export default function AppuseState() {
 
   const [
     showUi, // valor del estado
-    setShowUi // function que cambia el estado
+    setShowUi // funcion que cambia el estado
   ] = useState<boolean>(
     /// 1. estado inicial
     false

@@ -1,52 +1,62 @@
-import { useEffect, Component } from "react";
+import { useEffect, Component, useState } from "react";
 
-class CiclosDeVida extends Component {
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      count: 0,
-    };
-  }
+class CiclosDeVida extends Component<{}, { count: number }, {}> {
+  
+ 
   componentDidMount() {
     // Componente montado
-    document.title = "La UI está oculta";
+    console.log("La UI se muestra");
   }
   componentDidUpdate() {
     // Componente actualizado
-    document.title = "UI mostrada";
+    console.log("UI actualizada");
   }
   componentWillUnmount() {
     // Se ejecuta antes de que el component se desmonte
-    document.title = "UI destruida";
+    console.log("UI destruida");
   }
 
   render() {
-    return "UI";
+    return <h1>Hola mundo!</h1>;
   }
 }
 
-export default function AppUseEffect() {
+function CiclosDeVidaUseEffect() {
   useEffect(
     /// Callback
     () => {
       console.log("Componente montado");
 
+
       return () => {
-        console.log('Desmontado')
+        console.log("Desmontado");
         // ejecutado justo antes de que el componente se desmonte, componentWillUnmount
-        // ejemplo limpiar un timeout, cancelar un peticion
+        // ejemplo limpiar un timeout, cancelar un peticion, etc
       };
     },
     // arreglo de dependencias
     // 1. [ ] produce una unica ejecucion cuando el componente es montado
-    // 2. si se omite hara que Callback se ejecute en cada actualizacion del estado
+    // 2. si se omite(undefined) hara que Callback se ejecute en cada actualizacion del estado
     // 3. [ value ] ejecutará Callback la primera vez que se monte y cuando value cambie
     []
   );
-  return <CiclosDeVida />;
+
+
+  // Lo mas interesante es que puedes tener varios useEffect en mismo componente
+  useEffect(()=>{
+
+  },[])
+  return <h1>Hola mundo!</h1>;
+}
+
+export default function AppUseEffect() {
+  const [isVisible, setIsVisible] = useState(true);
+
   return (
     <div>
-      <h1> useEffect </h1>
+      {isVisible && <CiclosDeVidaUseEffect />}
+      <br />
+      <button onClick={() => setIsVisible(!isVisible)}>Toggle</button>
     </div>
   );
 }
